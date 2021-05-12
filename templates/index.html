@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>chatbot-Naman</title>
+	<style>
+		body {
+			background-color: #222831 !important;
+			color: white !important;
+		}
+
+		footer {
+			background-color: #393e46 !important;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+
+		}
+
+		a {
+
+			color: white !important;
+
+			text-decoration: none !important;
+		}
+
+		.ki {
+			padding-top: 10px;
+
+		}
+
+		::-webkit-scrollbar {
+			width: 12px;
+		}
+
+		::-webkit-scrollbar-track {
+			-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+			border-radius: 10px;
+		}
+
+		::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+			-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+		}
+	</style>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+	 crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8">
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<h1 align="center" class="display-1">Chatbot</h1>
+		<div id="chatbox">
+			<p class="botText"><span class="badge bg-warning text-wrap">>Hi! I am your chat bot</span></p>
+      </div>
+      <div class="ki">
+      <div id="userInput" class="input-group mb-3">
+        <input type="text" id="textInput" name="msg" class="form-control" placeholder="Message" aria-label="Message" aria-describedby="buttonInput">
+        <button id="buttonInput" class="btn btn-outline-secondary" value="send" type="button" >send</button></div></div>
+        <script>
+        function getBotResponse(){
+        var rawText = $("#textInput").val();
+        var userHtml = '<div align="right" ><div class="badge bg-primary text-wrap"><p class = "userText"><span>' + rawText + '</span></p></div></div><br>';
+        $("#textInput").val("");
+        $("#chatbox").append(userHtml);
+        document.getElementById('userInput').scrollIntoView({block:'start',behaviour:'smooth'});
+        $.get("/get", {msg:rawText }).done(function(data) {
+        var botHtml = '<div class="badge bg-danger text-wrap"><p class ="botText"><span>' + data + '</span></p></div>';
+        $("#chatbox").append(botHtml);
+        document.getElementById('userInput').scrollIntoView({block : 'start',behaviour:'smooth'});
+        });
+        }
+        $("#textInput").keypress(function(e) {
+        if(e.which == 13) {
+        getBotResponse();
+        }
+        });
+        $("#buttonInput").click(function() {
+        getBotResponse();
+        })
+        </script>   <br> <br> <br> <div class="foot">
+      <footer align="center" >&copy<a href"<a href="mailto:namanskshetty@gmail.com?subject=feedback">namanskshetty 2021</a></footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+  </body>
+</html>

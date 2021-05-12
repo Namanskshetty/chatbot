@@ -1,0 +1,23 @@
+
+ body{
+   background-color:#222831 !important;
+   color:white !important;
+ }
+ footer {
+background-color: #393e46 !important;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+  }
+a{
+
+   color: white !important;
+
+  text-decoration: none !important;
+}
+.ki{
+padding-top: 10px;
+
+}
