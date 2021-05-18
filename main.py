@@ -9,6 +9,8 @@ import pyjokes
 import emoji
 import random
 import os
+import requests
+import json
 
 app = Flask(__name__)  # Create an Instance
 english_bot = ChatBot("ChatterBot",storage_adapter="chatterbot.storage.SQLStorageAdapter")
@@ -62,6 +64,11 @@ def get_bot_response():
           return "Result not found!!(try typing wikki search ____)"
       else:
         return emoji.emojize("sorry :face_with_monocle: use page or search with this")
+    elif "quote" in small:
+      response = requests.get("https://zenquotes.io/api/random")
+      json_data = json.loads(response.text)
+      quote = json_data[0]['q'] + " -" + json_data[0]['a']
+      return str(quote)
     else:
       return str(english_bot.get_response(userText))
 
