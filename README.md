@@ -26,7 +26,7 @@ To run chat bot in your pc
     ````
 6. Install pyjokes
   ```sh 
-  install pyjokes
+  pip install pyjokes
   ```
 
 
