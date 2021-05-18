@@ -7,7 +7,7 @@ import datetime
 import wikipedia
 import pyjokes
 import emoji
-
+import random
 import os
 
 app = Flask(__name__)  # Create an Instance
@@ -34,6 +34,14 @@ def get_bot_response():
         return "Time is " + yet
     elif "joke" in small:
       return str(pyjokes.get_joke())
+    elif "random" in small:
+      try:
+          num=[int(word) for word in small.split() if word.isdigit()]
+          fi=num[0]
+          se=num[1]
+          return str(random.randrange(fi,se))
+      except:
+          return str("random number>",random.randrange(0,1000),"<(Predefined range/Default Range)")
 
     elif "who is" in small:
       person = small.replace('who is', '')
