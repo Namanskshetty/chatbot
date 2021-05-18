@@ -10,7 +10,7 @@ To run chat bot in your pc
    ```
 2. Install chatterbot
   ```sh
-  pip install chatterbot==1.0.1
+  pip install chatterbot==1.0.2
   ```
 3. Install pytz 
   ```sh
