@@ -11,6 +11,7 @@ import os
 import random
 import requests
 import json
+import string
 
 #  pip install chatterbot==1.0.2
 app = Flask(__name__)  # Create an Instance
@@ -40,9 +41,18 @@ def get_bot_response():
         return str(pyjokes.get_joke())
     elif "help" in small:
       naman=str(random.choice(["hello","nice to meet you","HI","oh!! help is right here","Let's see","hey"]))
-      new=str(" User\n\n you can use chat bot to have normal conversations like, aking time, jokes,quotes and much more\n to know more about the chatbot check for code by asking for he bot\n\n NOTE: WE ARE WOKING ON THE DOCUMENTATION PAGE")
+      new=str(" User\n\n you can use chat bot to have normal conversations like, aking time, jokes,quotes and much more\n to know more about the chatbot check for code by asking for he bot\n\n.  To generate random password just type PASSWORD length NOTE: WE ARE WOKING ON THE DOCUMENTATION PAGE")
       hi=naman+new
       return hi
+    elif "password" in small:
+      try:
+        num = [int(word) for word in small.split() if word.isdigit()]
+        lon = num[0]
+        password = ''.join(random.choice(string.printable) for i in range(lon))
+        return password
+      except:
+        password = ''.join(random.choice(string.printable) for i in range(8))
+        return password
     elif small in ["hi","hello"]:
       aman=str(random.choice(["!!!","nice to meet you","how may I help you","User"]))
       yet = str(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
