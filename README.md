@@ -28,7 +28,12 @@ To run chat bot in your pc
   ```sh 
   pip install pyjokes
   ```
-###Run the code bash
+7. Or use requirements.txt
+   ```sh
+   pip install -r requirements.txt
+   ```
+   
+### Run the code bash
 1. Executable bash
    ```sh
    chmod +x bash.sh
