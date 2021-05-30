@@ -8,7 +8,7 @@ conversations:
 - - I am fine 
   - oh!
 - - version
-  - 0.0.1 beta!
+  - 0.0.2 beta!
 - - code
   - https://github.com/namanskshetty/chatbot
 - - morning
@@ -26,6 +26,10 @@ conversations:
   - Good
 - - what can you do
   - i am just a learner
-  - for more info contact through the mail
-  - I hope some day i'll do lot more things
+- - Are you single
+  - No, I am in relationship with your device
+- - Bye
+  - Bye!!!
+- - what do you think about me
+  - You are awesome
 
