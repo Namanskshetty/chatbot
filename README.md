@@ -28,6 +28,14 @@ To run chat bot in your pc
   ```sh 
   pip install pyjokes
   ```
-
+###Run the code bash
+1. Executable bash
+   ```sh
+   chmod +x bash.sh
+   ```
+2. Run bash 
+   ```sh 
+   ./bash.sh
+   ```
 
 To add your questions and answers for the chatbot. Use the file data.yml
