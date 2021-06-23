@@ -35,7 +35,7 @@ def get_bot_response():
     print(str(userText))
     small = userText.lower()
     if "time" in small:
-        yet = str(datetime.datetime.now(pytz.timezone('Asia/Kolkata')))
+        yet = str(datetime.datetime.now(pytz.timezone('Asia/Kolkata'))) #time for asia/india check py time zones for the time zones
         return "Time is " + yet
     elif "joke" in small:
         return str(pyjokes.get_joke())
