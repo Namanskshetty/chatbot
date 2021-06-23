@@ -43,4 +43,4 @@ To run chat bot in your pc
    ./bash.sh
    ```
 
-To add your questions and answers for the chatbot. Use the file data.yml
+* To add your questions and answers for the chatbot. Use the file data/data.yml
